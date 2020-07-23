@@ -1,0 +1,29 @@
+<section class="login">
+    <div class="headerContainer row align-items-center">
+        <div class="header col-12">
+            <div class="row align-items-end d-flex justify-content-center">
+                <span class="col-auto" id="headerText">
+                    Laravel Media App
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="lowerLoginContainer">
+        <div class="col-12 d-flex justify-content-center">
+            <div id="loginForm" class="row border border-light rounded py-4 px-2 bg-light mt-5">
+                <div class="col-12">
+                    <signin ng-show="currentPath === '/'"></signin>
+                </div>
+                <div class="col-12">
+                    <signup ng-show="currentPath === '/signup'"></signup>
+                </div>
+                <div class="col-12">
+                    <div class="loginLinks text-center">
+                        <a ng-show="currentPath === '/'" ng-href="/signup">I need to create an account</a>
+                        <a ng-show="currentPath === '/signup'" ng-href="/signin">I have an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+//
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.appContainer {
+    height: 100%;
+}
+
+
+/* Header Component */
+.headerContainer {
+    background-color: #343a40;
+    height: 20%;
+}
+
+#headerText{
+    color: #ffffff;
+    font-size: 65px;
+}
+
+
+/* Login Page */
+.login {
+    height: 100%;
+    width: 100%;
+}
+
+#loginForm {
+    width: 60%;
+}
+
+#lowerLoginContainer {
+    height: 80%;
+    background-color: #61A3D2;
+}
+
+
+/* Home Page */
+.home {
+    height: 100%;
+}
+
+#nameContainer {
+    height: 4%;
+    width: 98%;
+    margin: auto;
+}
+
+#upperContainer {
+    height: 6%;
+    width: 98%;
+    margin: auto;
+}
+
+#lowerHomeContainer {
+    height: 90%;
+}
