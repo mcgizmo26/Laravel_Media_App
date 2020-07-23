@@ -22,7 +22,7 @@
     "typescript": "^3.9.7",
     "vue-template-compiler": "^2.6.11"
   },
-  "name": "LaravelMediaApp",
+  "name": "laravelmediaapp",
   "description": "",
   "version": "1.0.0",
   "main": "webpack.mix.js",

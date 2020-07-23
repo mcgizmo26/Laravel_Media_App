@@ -12,15 +12,17 @@
         <div class="col-12 d-flex justify-content-center">
             <div id="loginForm" class="row border border-light rounded py-4 px-2 bg-light mt-5">
                 <div class="col-12">
-                    <signin ng-show="currentPath === '/'"></signin>
+                    <signin ng-show="showLoginComponent"></signin>
                 </div>
                 <div class="col-12">
-                    <signup ng-show="currentPath === '/signup'"></signup>
+                    <signup ng-show="showSignupComponent"></signup>
                 </div>
                 <div class="col-12">
                     <div class="loginLinks text-center">
-                        <a ng-show="currentPath === '/'" ng-href="/signup">I need to create an account</a>
-                        <a ng-show="currentPath === '/signup'" ng-href="/signin">I have an account</a>
+                        <a ng-show="showSignupComponent" ng-href="#" ng-click="toggleView()">I need to create an account</a>
+                        <a ng-show="showLoginComponent" ng-href="#" ng-click="toggleView()">I have an account</a>
+                        <!-- <a ng-show="showSignupComponent" ng-click="toggleView()">I need to create an account</a>
+                        <a ng-show="showLoginComponent" ng-click="toggleView()">I have an account</a> -->
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ interface UserLogin {
     password: string
 };
 
-console.log("Login Service script loaded again");
+console.log("Login Service script loaded again and updated");
 
 angular.module('app')
     .service("loginSrvc", function($http: any, $cookies: any){

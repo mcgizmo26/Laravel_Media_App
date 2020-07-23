@@ -19350,20 +19350,27 @@ angular.module('app')
 /***/ (function(module, exports) {
 
 ;
-console.log("Login Controller script loaded again and again");
 angular.module('app')
     .controller('loginCtrl', function ($scope, $location, loginSrvc) {
     var loginForm = document.getElementById('loginForm');
-    $scope.currentPath = $location.path();
-    $scope.errorExists = false;
+    loginForm.style.maxHeight = "30%";
+    $scope.showLoginComponent = true;
+    $scope.showSignupComponent = false;
     $scope.errorMessage = "";
-    if ($scope.currentPath === "/") {
-        loginForm.style.maxHeight = "30%";
-    }
-    else {
-        loginForm.style.maxHeight = "55%";
-    }
-    ;
+    $scope.errorExists = false;
+    // New Method **********************************************
+    $scope.toggleView = function () {
+        if ($scope.showLoginComponent === true) {
+            $scope.showLoginComponent = false;
+            $scope.showSignupComponent = true;
+            loginForm.style.maxHeight = "55%";
+        }
+        else {
+            $scope.showLoginComponent = true;
+            $scope.showSignupComponent = false;
+            loginForm.style.maxHeight = "30%";
+        }
+    };
     // New Method **********************************************
     $scope.createUserInstance = function (user) {
         loginSrvc.createUserInstance(user).then(function (res) {
@@ -19483,7 +19490,7 @@ angular.module('app')
 /***/ (function(module, exports) {
 
 ;
-console.log("Login Service script loaded again");
+console.log("Login Service script loaded again and updated");
 angular.module('app')
     .service("loginSrvc", function ($http, $cookies) {
     // New Method **********************************************
@@ -19550,9 +19557,6 @@ __webpack_require__.r(__webpack_exports__);
 var app = angular.module('app', ['ngRoute', 'ngCookies']);
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
-    templateUrl: "templates/views/login.html",
-    controller: "loginCtrl"
-  }).when('/signup', {
     templateUrl: "templates/views/login.html",
     controller: "loginCtrl"
   }).when('/app', {
@@ -19672,8 +19676,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lonniemcgill/Sites/Laravel_Media_App/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/lonniemcgill/Sites/Laravel_Media_App/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lonniemcgill/Sites/mediaapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lonniemcgill/Sites/mediaapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

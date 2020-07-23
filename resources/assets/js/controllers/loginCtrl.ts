@@ -5,20 +5,28 @@ interface UserLogin {
     password: string
 };
 
-console.log("Login Controller script loaded again and again");
-
 angular.module('app')
     .controller('loginCtrl', function ($scope, $location, loginSrvc) {
         const loginForm: HTMLElement = document.getElementById('loginForm');
-        $scope.currentPath = $location.path();
-        $scope.errorExists = false;
-        $scope.errorMessage = "";
+        loginForm.style.maxHeight = "30%";
 
-        if ($scope.currentPath === "/") {
-            loginForm.style.maxHeight = "30%";
-        } else {
-            loginForm.style.maxHeight = "55%";
-        };
+        $scope.showLoginComponent = true;
+        $scope.showSignupComponent = false;
+        $scope.errorMessage = "";
+        $scope.errorExists = false;
+
+        // New Method **********************************************
+        $scope.toggleView = () => {
+            if($scope.showLoginComponent === true){
+                $scope.showLoginComponent = false
+                $scope.showSignupComponent = true;
+                loginForm.style.maxHeight = "55%";
+            } else {
+                $scope.showLoginComponent = true;
+                $scope.showSignupComponent = false;
+                loginForm.style.maxHeight = "30%";
+            }
+        }
 
         // New Method **********************************************
         $scope.createUserInstance = (user: UserLogin) => {
